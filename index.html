@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оқу курсы: 15 апта</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --primary-dark: #2c3e50; --accent-blue: #3498db; --midterm-color: #f39c12; }
+        body { background-color: #f0f2f5; font-family: 'Inter', sans-serif; }
+        .hero { background: linear-gradient(45deg, #2c3e50, #3498db); color: white; padding: 40px 0; margin-bottom: 30px; border-bottom: 5px solid #2980b9; }
+        .week-card { border: none; border-radius: 12px; transition: 0.3s; height: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.08); background: white; }
+        .week-card:hover { transform: translateY(-7px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .card-title { color: var(--primary-dark); font-weight: bold; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .btn-resource { text-align: left; margin-bottom: 8px; font-size: 0.9rem; border: 1px solid #e1e8ed; background: #f8f9fa; color: #555; transition: 0.2s; }
+        .btn-resource:hover { background: var(--accent-blue); color: white; border-color: var(--accent-blue); }
+        .midterm-section { border: 2px solid var(--midterm-color) !important; background: #fffdf5; }
+        .exam-card { background: linear-gradient(135deg, #e74c3c, #c0392b); color: white; border-radius: 15px; padding: 40px; margin-top: 50px; margin-bottom: 50px; }
+        .badge-midterm { background-color: var(--midterm-color); color: white; font-size: 0.7rem; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+
+<header class="hero text-center">
+    <div class="container">
+        <h1>Пәннің атауы осы жерде</h1>
+        <p class="lead opacity-75">15 апталық оқу бағдарламасы мен материалдар жинағы</p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row g-4">
+        
+        <script>
+            const weeks = [
+                "Кіріспе және негізгі ұғымдар", "Теориялық негіздер", "Практикалық әдістер", 
+                "Жүйелік талдау", "Процестерді модельдеу", "Технологиялық шешімдер", "Ағымдағы бақылау"
+            ];
+            
+            for(let i = 1; i <= 7; i++) {
+                document.write(`
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card week-card p-3">
+                            <h5 class="card-title">${i}-апта</h5>
+                            <p class="text-muted small">${weeks[i-1]}</p>
+                            <div class="d-flex flex-column">
+                                <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-resource">📖 Дәріс</a>
+                                <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-resource">🧪 Зертханалық жұмыс</a>
+                                <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-resource">✍️ Тапсырма / БӨЖ</a>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            }
+        </script>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card week-card p-3 midterm-section">
+                <h5 class="card-title text-warning">8-апта <span class="badge badge-midterm">Аралық бақылау I</span></h5>
+                <p class="text-muted small">1-7 апталар бойынша білімді тексеру</p>
+                <div class="d-flex flex-column">
+                    <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-warning text-white fw-bold">📝 БАҚЫЛАУ ТАПСЫРМАСЫ</a>
+                    <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-resource">📚 Қайталау материалдары</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const weeksLate = [
+                "Күрделі құрылымдар", "Инновациялық бағыттар", "Жобалау негіздері", 
+                "Сапаны бақылау", "Тәжірибелік қолдану", "Қорытындылау"
+            ];
+            for(let i = 9; i <= 14; i++) {
+                document.write(`
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card week-card p-3">
+                            <h5 class="card-title">${i}-апта</h5>
+                            <p class="text-muted small">${weeksLate[i-9]}</p>
+                            <div class="d-flex flex-column">
+                                <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-resource">📖 Дәріс</a>
+                                <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-resource">🧪 Зертханалық жұмыс</a>
+                                <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-resource">✍️ Тапсырма / БӨЖ</a>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            }
+        </script>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="card week-card p-3 midterm-section">
+                <h5 class="card-title text-warning">15-апта <span class="badge badge-midterm">Аралық бақылау II</span></h5>
+                <p class="text-muted small">9-14 апталар бойынша білімді тексеру</p>
+                <div class="d-flex flex-column">
+                    <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-warning text-white fw-bold">📝 БАҚЫЛАУ ТАПСЫРМАСЫ</a>
+                    <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-resource">📚 Қайталау материалдары</a>
+                </div>
+            </div>
+        </div>
+
+    </div> <div class="exam-card text-center shadow-lg">
+        <h2 class="display-6 fw-bold">🎓 ҚОРЫТЫНДЫ ЕМТИХАН</h2>
+        <p class="lead mb-4">Емтихан сұрақтары мен билеттер тізімі осы бөлімде:</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-light btn-lg px-4 fw-bold">📂 Сұрақтар тізімі (PDF)</a>
+            <a href="СІЛТЕМЕ_ОСЫНДА" class="btn btn-outline-light btn-lg px-4">📋 Емтихан талаптары</a>
+        </div>
+    </div>
+
+</div>
+
+<footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+        <p class="mb-0">Оқытушы: <strong>Аты-жөніңіз</strong> | 2024 Оқу жылы</p>
+    </div>
+</footer>
+
+</body>
+</html>
+
+
+
+
+
+
