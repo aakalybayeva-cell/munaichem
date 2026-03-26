@@ -7,74 +7,89 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root { --main-green: #1b5e20; --accent-blue: #0277bd; }
-        body { background-color: #f8faf9; font-family: 'Segoe UI', Tahoma, sans-serif; }
-        .hero { background: linear-gradient(135deg, #1b5e20, #388e3c); color: white; padding: 45px 0; border-bottom: 5px solid #81c784; }
-        .week-card { border: none; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); background: white; transition: 0.3s; height: 100%; }
-        .week-card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.15); }
-        .card-title { color: var(--main-green); font-weight: bold; border-bottom: 2px solid #f1f1f1; padding-bottom: 10px; margin-bottom: 15px; }
-        .btn-res { text-align: left; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #dee2e6; background: #ffffff; color: #333; transition: 0.2s; border-radius: 8px; }
-        .btn-res:hover { background: var(--accent-blue); color: white; border-color: var(--accent-blue); }
+        body { background-color: #f8faf9; font-family: 'Segoe UI', sans-serif; }
+        .hero { background: linear-gradient(135deg, #1b5e20, #388e3c); color: white; padding: 40px 0; border-bottom: 5px solid #81c784; text-align: center; }
+        .week-card { border: none; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); background: white; height: 100%; padding: 20px; }
+        .card-title { color: var(--main-green); font-weight: bold; border-bottom: 2px solid #f1f1f1; margin-bottom: 15px; }
+        .btn-res { text-align: left; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #dee2e6; background: #ffffff; color: #333; border-radius: 8px; display: block; text-decoration: none; padding: 8px 12px; }
+        .btn-res:hover { background: var(--accent-blue); color: white; }
         .special-btn { background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; font-weight: 500; }
-        .control-box { background: white; border-radius: 15px; padding: 30px; margin-top: 40px; border-left: 8px solid #d32f2f; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .control-box { background: white; border-radius: 15px; padding: 25px; margin-top: 40px; border-left: 8px solid #d32f2f; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
 
-<header class="hero text-center">
+<header class="hero">
     <div class="container">
-        <h1>Мұнай химиясын оқытуда экологиялық білім мен мәдениетті қалыптастыруға бағытталған электронды оқу-әдістемелік кешен</h1>
-        <p class="lead">Студенттерге арналған электронды оқу-әдістемелік кешен</p>
+        <h1>Мұнай химиясы және экологиялық мәдениет</h1>
+        <p>Электронды оқу-әдістемелік кешен</p>
     </div>
 </header>
 
 <div class="container my-5">
-    <div class="row g-4">
-        
-        <script>
-            // БӨЖ+БОӨЖ бір файлда болатын апталар
-            const specialWeeks = [3, 6, 7, 8, 11, 13, 14, 15];
-
-            for (let i = 1; i <= 15; i++) {
-                let hasSyllabus = specialWeeks.includes(i);
-                
-                document.write(`
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card week-card p-3">
-                            <h5 class="card-title">${i}-апта</h5>
-                            <div class="d-flex flex-column">
-                                <a href="https://docs.google.com/presentation/d/1oavP9uzPq2fWTpcGInF3HhmeqGiBjxfH/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true" target="_blank" class="btn btn-res">📖 1-дәріс</a>
-                                <a href="СІЛТЕМЕ_ОСЫНДА" target="_blank" class="btn btn-res">🧪 1-зертханалық жұмыс</a>
-                                <a href="СІЛТЕМЕ_ОСЫНДА" target="_blank" class="btn btn-res">✍️ Тапсырмалар</a>
-                                ${hasSyllabus ? `
-                                    <a href="СІЛТЕМЕ_ОСЫНДА" target="_blank" class="btn btn-res special-btn">📚 БӨЖ және БОӨЖ тапсырмасы</a>
-                                ` : ''}
-                            </div>
-                        </div>
-                    </div>
-                `);
-            }
-        </script>
-
-    </div>
+    <div class="row g-4" id="weeks-container">
+        </div>
 
     <div class="control-box">
-        <h3 class="mb-4 text-danger">🏁 Бақылау және Емтихан</h3>
-        <div class="row g-3 text-center">
-            <div class="col-md-4">
-                <a href="СІЛТЕМЕ_ОСЫНДА" target="_blank" class="btn btn-outline-danger w-100 py-2">Аралық бақылау №1</a>
-            </div>
-            <div class="col-md-4">
-                <a href="СІЛТЕМЕ_ОСЫНДА" target="_blank" class="btn btn-outline-danger w-100 py-2">Аралық бақылау №2</a>
-            </div>
-            <div class="col-md-4">
-                <a href="СІЛТЕМЕ_ОСЫНДА" target="_blank" class="btn btn-danger w-100 py-2">Емтихан сұрақтары</a>
-            </div>
+        <h3 class="text-danger mb-4">🏁 Бақылау және Емтихан</h3>
+        <div class="row g-3">
+            <div class="col-md-4"><a href="СІЛТЕМЕ_АБ1" target="_blank" class="btn btn-outline-danger w-100">Аралық бақылау №1</a></div>
+            <div class="col-md-4"><a href="СІЛТЕМЕ_АБ2" target="_blank" class="btn btn-outline-danger w-100">Аралық бақылау №2</a></div>
+            <div class="col-md-4"><a href="СІЛТЕМЕ_ЕМТИХАН" target="_blank" class="btn btn-danger w-100">Емтихан сұрақтары</a></div>
         </div>
     </div>
 </div>
 
-<footer class="text-center py-4 text-muted border-top bg-white">
-    <p>Оқытушы:<strong>[Калыбаева Аяжан Дильдабекқызы]</strong> | 2026 оқу жылы</p>
+<script>
+    // --- ОСЫ ЖЕРГЕ ГУГЛ ДИСК СІЛТЕМЕЛЕРІН ҚОЙЫҢЫЗ ---
+    
+    const darister = [
+        "сілтеме_дәріс_1", "сілтеме_дәріс_2", "сілтеме_дәріс_3", "сілтеме_дәріс_4", "сілтеме_дәріс_5",
+        "сілтеме_дәріс_6", "сілтеме_дәріс_7", "сілтеме_дәріс_8", "сілтеме_дәріс_9", "сілтеме_дәріс_10",
+        "сілтеме_дәріс_11", "сілтеме_дәріс_12", "сілтеме_дәріс_13", "сілтеме_дәріс_14", "сілтеме_дәріс_15"
+    ];
+
+    const labtar = [
+        "сілтеме_лаб_1", "сілтеме_лаб_2", "сілтеме_лаб_3", "сілтеме_лаб_4", "сілтеме_лаб_5",
+        "сілтеме_лаб_6", "сілтеме_лаб_7", "сілтеме_лаб_8", "сілтеме_лаб_9", "сілтеме_лаб_10",
+        "сілтеме_лаб_11", "сілтеме_лаб_12", "сілтеме_лаб_13", "сілтеме_лаб_14", "сілтеме_лаб_15"
+    ];
+
+    const tapsyrmalar = [
+        "сілтеме_тап_1", "сілтеме_тап_2", "сілтеме_тап_3", "сілтеме_тап_4", "сілтеме_тап_5",
+        "сілтеме_тап_6", "сілтеме_тап_7", "сілтеме_тап_8", "сілтеме_тап_9", "сілтеме_тап_10",
+        "сілтеме_тап_11", "сілтеме_тап_12", "сілтеме_тап_13", "сілтеме_тап_14", "сілтеме_тап_15"
+    ];
+
+    // БӨЖ+БОӨЖ сілтемелері (тек 3,6,7,8,11,13,14,15 апталар үшін)
+    // Ретімен: 3-аптанікі, кейін 6-аптанікі және т.б.
+    const bozh_links = {
+        3: "сілтеме_3_апта", 6: "сілтеме_6_апта", 7: "сілтеме_7_апта", 8: "сілтеме_8_апта",
+        11: "сілтеме_11_апта", 13: "сілтеме_13_апта", 14: "сілтеме_14_апта", 15: "сілтеме_15_апта"
+    };
+
+    // --- ТӨМЕНГІ ЖАҒЫНА ТИІСПЕҢІЗ (АВТОМАТТЫ ҚҰРАСТЫРУ) ---
+    
+    const container = document.getElementById('weeks-container');
+    for (let i = 1; i <= 15; i++) {
+        let idx = i - 1;
+        let bozhHtml = bozh_links[i] ? `<a href="${bozh_links[i]}" target="_blank" class="btn btn-res special-btn">📚 БӨЖ және БОӨЖ</a>` : '';
+        
+        container.innerHTML += `
+            <div class="col-md-6 col-lg-4">
+                <div class="week-card">
+                    <h5 class="card-title">${i}-апта</h5>
+                    <a href="${darister[idx]}" target="_blank" class="btn btn-res">📖 Дәріс материалдары</a>
+                    <a href="${labtar[idx]}" target="_blank" class="btn btn-res">🧪 Зертханалық жұмыс</a>
+                    <a href="${tapsyrmalar[idx]}" target="_blank" class="btn btn-res">✍️ Тапсырмалар</a>
+                    ${bozhHtml}
+                </div>
+            </div>`;
+    }
+</script>
+
+<footer class="text-center py-4 bg-white mt-5 border-top">
+    <p>Оқытушы: [Аты-жөніңіз] | 2026</p>
 </footer>
 
 </body>
