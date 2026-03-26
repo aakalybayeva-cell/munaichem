@@ -11,11 +11,10 @@
         .hero { background: linear-gradient(135deg, #1b5e20, #388e3c); color: white; padding: 40px 0; border-bottom: 5px solid #81c784; text-align: center; }
         .week-card { border: none; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); background: white; height: 100%; padding: 20px; }
         .card-title { color: var(--main-green); font-weight: bold; border-bottom: 2px solid #f1f1f1; margin-bottom: 15px; }
-        .btn-res { text-align: left; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #dee2e6; background: #ffffff; color: #333; border-radius: 8px; display: block; text-decoration: none; padding: 8px 12px; transition: 0.2s; }
+        .btn-res { text-align: left; margin-bottom: 7px; font-size: 0.9rem; border: 1px solid #dee2e6; background: #ffffff; color: #333; border-radius: 8px; display: block; text-decoration: none; padding: 8px 12px; }
         .btn-res:hover { background: var(--accent-blue); color: white; }
         .special-btn { background: #e8f5e9; border-color: #a5d6a7; color: #2e7d32; font-weight: 500; }
         .control-box { background: white; border-radius: 15px; padding: 25px; margin-top: 40px; border-left: 8px solid #d32f2f; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .books-section { background: #e3f2fd; border-radius: 15px; padding: 25px; margin-top: 40px; border-left: 8px solid #0277bd; }
     </style>
 </head>
 <body>
@@ -28,69 +27,76 @@
 </header>
 
 <div class="container my-5">
-    <div class="row g-4" id="weeks-container"></div>
-
-    <div class="books-section shadow-sm">
-        <h3 style="color: #01579b;" class="mb-4">📚 Пайдалы оқулықтар мен әдебиеттер</h3>
-        <div class="row g-3" id="books-container">
-            </div>
-    </div>
+    <div class="row g-4" id="weeks-container">
+        </div>
 
     <div class="control-box">
-        <h3 class="text-danger mb-4">🚩 Бақылау және Емтихан</h3>
+        <h3 class="text-danger mb-4">🏁 Бақылау және Емтихан</h3>
         <div class="row g-3">
             <div class="col-md-4"><a href="СІЛТЕМЕ_АБ1" target="_blank" class="btn btn-outline-danger w-100">Аралық бақылау №1</a></div>
             <div class="col-md-4"><a href="СІЛТЕМЕ_АБ2" target="_blank" class="btn btn-outline-danger w-100">Аралық бақылау №2</a></div>
-            <div class="col-md-4"><a href="СІЛТЕМЕ_ЕМТИХАН" target="_blank" class="btn btn-danger w-100 text-white">Емтихан сұрақтары</a></div>
+            <div class="col-md-4"><a href="СІЛТЕМЕ_ЕМТИХАН" target="_blank" class="btn btn-danger w-100">Емтихан сұрақтары</a></div>
         </div>
     </div>
 </div>
 
 <script>
-    // --- 1. АПТАЛАР СІЛТЕМЕСІ ---
-    const darister = Array(15).fill("СІЛТЕМЕ_ДӘРІС");
-    const labtar = Array(15).fill("СІЛТЕМЕ_ЛАБ");
-    const tapsyrmalar = Array(15).fill("СІЛТЕМЕ_ТАПСЫРМА");
+    // --- ОСЫ ЖЕРГЕ ГУГЛ ДИСК СІЛТЕМЕЛЕРІН ҚОЙЫҢЫЗ ---
+    
+    const darister = [
+        "https://docs.google.com/presentation/d/1oavP9uzPq2fWTpcGInF3HhmeqGiBjxfH/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true", "https://docs.google.com/presentation/d/1Td4m0gnsbwEthiOJ5GQYtQmUMBR1mC69/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true", "https://docs.google.com/presentation/d/1gT0k233FPj08ac9wGD8W1NEaqmC2n6x3/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true", "https://docs.google.com/presentation/d/1ohXlgCrHNRWTzo6unuc98hcaC4eLtNbn/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true", "https://docs.google.com/presentation/d/1iReIqe1ZHgIunda4Ou2x4MTzRH37tYxn/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true",
+        "https://docs.google.com/presentation/d/1GYLypyEzV_DFXUXgAHykTgF-ybCF_LgQ/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true", "https://docs.google.com/presentation/d/1rglndU4DkOu3rPOfcL_WmoNhulk68upW/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true", "https://docs.google.com/presentation/d/1A_3KytdJSV92T12I4KEaduc_xAsS-X6Z/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true", "https://docs.google.com/presentation/d/1WmrFEUlYrTo7EStAO5Q5SMdvtxF7sdOC/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true", "https://docs.google.com/presentation/d/1YDwCatGwdodmxoDRLylQAMAZgNxBjIbZ/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true",
+        "https://docs.google.com/presentation/d/1vXjHl_cDwBQORs3g2_QrqBHtXP0m7Czu/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true", "https://docs.google.com/presentation/d/1uNCT37Rbvb0ErvEnznQ1HgM-bwVGuZry/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true", "https://drive.google.com/file/d/1K5R5h-_5Xc2pkPIbRXyFQWmgpjBDVtnB/view?usp=drive_link", "https://drive.google.com/file/d/18sSQs1JGpGCi61E1_Kfi6fW2Rbg1OdPi/view?usp=drive_link", "https://docs.google.com/presentation/d/1vfsJbtsxI_A_354GnCHwsZA948EiAHoE/edit?usp=drive_link&ouid=118082456372588278725&rtpof=true&sd=true"
+    ];
 
+    const labtar = [
+        "сілтеме_лаб_1", "сілтеме_лаб_2", "сілтеме_лаб_3", "сілтеме_лаб_4", "сілтеме_лаб_5",
+        "сілтеме_лаб_6", "сілтеме_лаб_7", "сілтеме_лаб_8", "сілтеме_лаб_9", "сілтеме_лаб_10",
+        "сілтеме_лаб_11", "сілтеме_лаб_12", "сілтеме_лаб_13", "сілтеме_лаб_14", "сілтеме_лаб_15"
+    ];
+
+    const tapsyrmalar = [
+        "сілтеме_тап_1", "сілтеме_тап_2", "сілтеме_тап_3", "сілтеме_тап_4", "сілтеме_тап_5",
+        "сілтеме_тап_6", "сілтеме_тап_7", "сілтеме_тап_8", "сілтеме_тап_9", "сілтеме_тап_10",
+        "сілтеме_тап_11", "сілтеме_тап_12", "сілтеме_тап_13", "сілтеме_тап_14", "сілтеме_тап_15"
+    ];
+
+    // БӨЖ+БОӨЖ сілтемелері (тек 3,6,7,8,11,13,14,15 апталар үшін)
+    // Ретімен: 3-аптанікі, кейін 6-аптанікі және т.б.
     const bozh_links = {
-        3: "#", 6: "#", 7: "#", 8: "#", 11: "#", 13: "#", 14: "#", 15: "#"
+        3: "сілтеме_3_апта", 6: "сілтеме_6_апта", 7: "сілтеме_7_апта", 8: "сілтеме_8_апта",
+        11: "сілтеме_11_апта", 13: "сілтеме_13_апта", 14: "сілтеме_14_апта", 15: "сілтеме_15_апта"
     };
 
-    // --- 2. ОҚУЛЫҚТАР ТІЗІМІ (Осында өзгертесіз) ---
+// --- 2. ОҚУЛЫҚТАР ТІЗІМІ (Осында өзгертесіз) ---
     const okulyktar = [
         { name: "Мұнай химиясы негіздері (Оқулық)", link: "СІЛТЕМЕ_ОСЫНДА" },
         { name: "Экологиялық химия (Практикум)", link: "СІЛТЕМЕ_ОСЫНДА" },
         { name: "Мұнай өңдеу зауыттарының экологиясы", link: "СІЛТЕМЕ_ОСЫНДА" },
         { name: "Қосымша әдебиет №1", link: "СІЛТЕМЕ_ОСЫНДА" }
-    ];
 
-    // --- АВТОМАТТЫ ҚҰРАСТЫРУ ---
-    const weeksDiv = document.getElementById('weeks-container');
+    // --- ТӨМЕНГІ ЖАҒЫНА ТИІСПЕҢІЗ (АВТОМАТТЫ ҚҰРАСТЫРУ) ---
+    
+    const container = document.getElementById('weeks-container');
     for (let i = 1; i <= 15; i++) {
+        let idx = i - 1;
         let bozhHtml = bozh_links[i] ? `<a href="${bozh_links[i]}" target="_blank" class="btn btn-res special-btn">📚 БӨЖ және БОӨЖ</a>` : '';
-        weeksDiv.innerHTML += `
+        
+        container.innerHTML += `
             <div class="col-md-6 col-lg-4">
                 <div class="week-card">
                     <h5 class="card-title">${i}-апта</h5>
-                    <a href="${darister[i-1]}" target="_blank" class="btn btn-res">📖 Дәріс материалдары</a>
-                    <a href="${labtar[i-1]}" target="_blank" class="btn btn-res">🧪 Зертханалық жұмыс</a>
-                    <a href="${tapsyrmalar[i-1]}" target="_blank" class="btn btn-res">✍️ Тапсырмалар</a>
+                    <a href="${darister[idx]}" target="_blank" class="btn btn-res">📖 Дәріс материалдары</a>
+                    <a href="${labtar[idx]}" target="_blank" class="btn btn-res">🧪 Зертханалық жұмыс</a>
+                    <a href="${tapsyrmalar[idx]}" target="_blank" class="btn btn-res">✍️ Тапсырмалар</a>
                     ${bozhHtml}
                 </div>
             </div>`;
     }
-
-    const booksDiv = document.getElementById('books-container');
-    okulyktar.forEach(book => {
-        booksDiv.innerHTML += `
-            <div class="col-md-6">
-                <a href="${book.link}" target="_blank" class="btn btn-res shadow-sm" style="background: white;">📖 ${book.name}</a>
-            </div>`;
-    });
 </script>
 
-<footer class="text-center py-4 bg-white mt-5 border-top small text-muted">
-    <p>Оқытушы: [Сіздің аты-жөніңіз] | 2026 оқу жылы</p>
+<footer class="text-center py-4 bg-white mt-5 border-top">
+    <p>Оқытушы: [Аты-жөніңіз] | 2026</p>
 </footer>
 
 </body>
